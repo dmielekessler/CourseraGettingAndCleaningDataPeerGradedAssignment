@@ -117,10 +117,10 @@ averagesnames[1:2] <- c("activityname", "subject")
 50. Update the variable names in the averages data set 
 colnames(averagesdata) <- averagesnames
 51. check if the final step output file already exists, if so delete it
-finalfile <- as.character(paste(startingwd, "measurementaveragesbysubjectandactivity.csv", sep = "/"))
+finalfile <- as.character(paste(startingwd, "measurementaveragesbysubjectandactivity.txt", sep = "/"))
 invisible(if(file.exists(finalfile)) {file.remove(finalfile)})
-52. Write the final tidy data set to a csv and also View
-write.csv(averagesdata, file = "measurementaveragesbysubjectandactivity.csv")
+52. Write the final tidy data set to a txt and also View
+write.table(averagesdata, file = "measurementaveragesbysubjectandactivity.txt", row.names = FALSE)
 View(averagesdata)
 
 ```{r r script run_analysis.R, echo= FALSE}
@@ -279,10 +279,10 @@ averagesnames[1:2] <- c("activityname", "subject")
 colnames(averagesdata) <- averagesnames
 
 # check if the final step output file already exists, if so remove it
-finalfile <- as.character(paste(startingwd, "measurementaveragesbysubjectandactivity.csv", sep = "/"))
+finalfile <- as.character(paste(startingwd, "measurementaveragesbysubjectandactivity.txt", sep = "/"))
 invisible(if(file.exists(finalfile)) {file.remove(finalfile)})
 
-# Write the final tidy data set to a csv and also View
-write.csv(averagesdata, file = "measurementaveragesbysubjectandactivity.csv")
+# Write the final tidy data set to a txt and also View
+write.table(averagesdata, file = "measurementaveragesbysubjectandactivity.txt", row.names = FALSE)
 View(averagesdata)
 ```
